@@ -53,7 +53,7 @@ app.configure('production', function() {
 	app.set('db-uri', app.get("config").getConfig("mongodb").prod);
 });
 
-//db = mongoose.connect(app.set('db-uri'));
+db = mongoose.connect(app.set('db-uri'));
 Router.init(app);
 
 var server = http.createServer(app).listen(app.get('port'), function() {
