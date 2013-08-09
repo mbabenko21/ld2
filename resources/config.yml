@@ -3,6 +3,7 @@ locale: "ru-RU"
 env: "development"
 debug: false
 mongodb:
- dev:  "mongodb://localhost/ld2-revival-dev"
+ #dev:  "mongodb://localhost/ld2-revival-dev"
+ dev: "mongodb://babenoff:@ds037698.mongolab.com:37698/heroku_app17415391"
  test: "mongodb://localhost/ld2-revival-test"
  prod: "mongodb://localhost/ld2-revival-prod"
