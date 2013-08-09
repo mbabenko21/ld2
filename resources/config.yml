@@ -1,0 +1,8 @@
+app_name: "Likedimion. Возраждение"
+locale: "ru-RU"
+env: "development"
+debug: false
+mongodb:
+ dev:  "mongodb://localhost/ld2-revival-dev"
+ test: "mongodb://localhost/ld2-revival-test"
+ prod: "mongodb://localhost/ld2-revival-prod"

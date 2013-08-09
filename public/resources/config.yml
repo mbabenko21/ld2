@@ -1,0 +1,5 @@
+locale: "ru-RU"
+mongodb:
+  development: "mongodb://localhost/ld2-development"
+  test: "mongodb://localhost/ld2-test"
+  production: "mongodb://localhost/ld2-production"

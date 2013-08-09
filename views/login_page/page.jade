@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+    div.panel
+        - var classes = ['panel-heading']
+        div(class=classes)
+            - var title_class = ["panel-title"]
+            h6(class = title_class) #{locale.line("label_startpage")}
+        -var classes = ['row']
+        div(class=classes)
+            div.col-sm-8
+            //Форма авторизации
+            div.col-sm-4
+                include auth_form
+                mixin auth_form_navbar(locale)

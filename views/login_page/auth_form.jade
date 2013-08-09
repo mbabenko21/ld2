@@ -1,0 +1,57 @@
+mixin auth_form_navbar(locale)
+    div.panel
+        - var classes = ["row"]
+        div(class=classes)
+            div.col-lg-12
+                div#tabs
+
+                    - var classes = ["nav", "nav-tabs", "nav-justified"]
+                    ul(class=classes)
+                        li.active
+                            a(href="#auth", data-toggle="tab")
+                                | #{locale.line('label_auth')}
+                        li
+                            a(href="#reg", data-toggle="tab")
+                                | #{locale.line('label_registration')}
+                    div(id="auth-form-widget")
+                        - var classes = ["tab-content"]
+                        div(class=classes)
+                             //авторизация
+                             mixin auth_form(locale)
+                             //регистрация
+                             mixin reg_form(locale)
+    script(src="/js/views/login.js");
+                        
+mixin auth_form(locale)
+    - var classes = ["row", "tab-pane", "active"]
+    div(class=classes, id="auth")
+        span#auth-result
+        div.input-group
+            - var classes = ["input-group-addon", "glyphicon", "glyphicon-user"]
+            span(class=classes)
+            input(type="text", class="form-control auth_login", name="auth[email]", id="inputSuccess", placeholder=locale.line('field_account'))
+        div.input-group
+            - var classes = ["input-group-addon", "glyphicon", "glyphicon-th"]
+            span(class=classes)
+            input(type="password", class="form-control", name="auth[password]", id="passwordSuccess", placeholder=locale.line('field_password'))
+        - var classes = ["btn", "btn-form", "btn-primary", "btn-sm", "col-lg-12"]
+        button(type="button", id="button-login", class=classes) #{locale.line("button_auth")}
+
+mixin reg_form(locale)
+    - var classes = ["row", "tab-pane"]
+    div(class=classes, id="reg")
+        div.input-group
+            - var classes = ["input-group-addon", "glyphicon", "glyphicon-user"]
+            span(class=classes)
+            input(type="text", class="form-control auth_login", name="reg[email]", placeholder=locale.line('field_account'))
+        div.input-group
+            - var classes = ["input-group-addon", "glyphicon", "glyphicon-th"]
+            span(class=classes)
+            input(type="password", class="form-control", name="reg[password]", placeholder=locale.line('field_password'))
+        div.input-group
+            - var classes = ["input-group-addon", "glyphicon", "glyphicon-th"]
+            span(class=classes)
+            input(type="password", class="form-control", name="reg[password_confirm]", placeholder=locale.line('field_password_confirm'))
+        - var classes = ["btn", "btn-form", "btn-primary", "btn-sm", "col-lg-12"]
+        button(type="button", id="button-registration", class=classes) #{locale.line("button_registration")}
+    
