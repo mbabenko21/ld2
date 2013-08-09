@@ -20,7 +20,7 @@
     "connect-mongodb": "*",
     "connect-timeout": "*",
   },
-  "engine": {
+  "engines": {
     "node": "0.8.x",
     "npm": "1.3.x"
   }
