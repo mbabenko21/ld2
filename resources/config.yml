@@ -4,7 +4,7 @@ env: "development"
 debug: false
 secret: "likedimion_revival_team_production"
 mongodb:
- prod:  "mongodb://localhost/ld2-revival-dev"
+ dev:  "mongodb://localhost/ld2-revival-dev"
  #dev: "mongodb://babenoff:@ds037698.mongolab.com:37698/heroku_app17415391"
  test: "mongodb://localhost/ld2-revival-test"
- dev: "mongodb://babenoff:@ds037698.mongolab.com:37698/heroku_app17415391"
+ prod: "mongodb://babenoff:@ds037698.mongolab.com:37698/heroku_app17415391"
