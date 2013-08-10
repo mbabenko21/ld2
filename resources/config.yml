@@ -2,6 +2,7 @@ app_name: "Likedimion. Revival"
 locale: "ru-RU"
 env: "development"
 debug: false
+secret: "likedimion_revival_team_production"
 mongodb:
  #dev:  "mongodb://localhost/ld2-revival-dev"
  dev: "mongodb://babenoff:@ds037698.mongolab.com:37698/heroku_app17415391"

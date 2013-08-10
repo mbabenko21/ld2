@@ -5,13 +5,14 @@
 var express = require('express'),
 	jade = require('jade'),
 	mongoose = require('mongoose'),
-	routes = require('./routes'),
-	user = require('./routes/user'),
 	http = require('http'),
 	path = require('path'),
 	mongeStore = require("connect-mongodb"),
 	connectTimeout = require('connect-timeout'),
 	eventEmitter = require('events').EventEmitter,
+	SessionStore = require("session-mongoose")(express),
+	MongoStore = require('connect-mongostore')(express),
+	flash = require("connect-flash"),
 	config = require('./lib/ld2/config'),
 	locale = require('./lib/ld2/locale'),
 	Router = require('./lib/ld2/router'),
@@ -19,7 +20,10 @@ var express = require('express'),
 
 var app = express();
 app.set('config_path', path.join(__dirname, 'resources/config.yml'));
-
+var mongoStore = new SessionStore({
+	url: "mongodb://babenoff:@ds037698.mongolab.com:37698/heroku_app17415391",
+	interval: 60000 // expiration check worker run interval in millisec (default: 60000)
+});
 // all environments
 app.set('config', config.Config(app.get('config_path')));
 app.set("locale", locale.Translations(app.get("config").getLocale()));
@@ -30,7 +34,22 @@ app.set('view engine', 'jade');
 app.use(express.favicon());
 app.use(express.logger({
 	format: '\x1b[1m:method\x1b[0m \x1b[33m:url\x1b[0m :response-time ms'
-}))
+}));
+app.use(express.cookieParser('express-messages-bootstrap'));
+app.use(express.session({
+	secret: app.get("config").getConfig("secret"),
+	store: mongoStore,
+	cookie: {
+		maxAge: 60000
+	}
+}));
+app.use(flash());
+
+app.use(function(req, res, next) {
+	res.locals.messages = require('express-messages-bootstrap').with({
+		should_render: true
+	})(req, res, next);
+});
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);

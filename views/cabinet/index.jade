@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+    div.panel
+        - var classes = ['panel-heading']
+        div(class=classes)
+            - var title_class = ["panel-title"]
+            h6(class = title_class) 
+                 | #{locale.line("label_cabinet")}
+            //Меню
+
+        div.row
+            div.col-sm-3
+                include cabinet_menu
+                mixin cabinet_menu_navbar(locale)
+                //Контент страницы
+            div.col.sm-9
+    script(src="/js/views/cabinet.js");
