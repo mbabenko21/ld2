@@ -7,4 +7,4 @@ mongodb:
  dev:  "mongodb://localhost/ld2-revival-dev"
  #dev: "mongodb://babenoff:@ds037698.mongolab.com:37698/heroku_app17415391"
  test: "mongodb://localhost/ld2-revival-test"
- prod: "mongodb://babenoff:@ds037698.mongolab.com:37698/heroku_app17415391"
+ prod: "mongodb://babenoff@ds037698.mongolab.com:37698/heroku_app17415391"
