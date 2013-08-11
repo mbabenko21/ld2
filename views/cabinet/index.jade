@@ -1,22 +1,32 @@
 extends ../layout
 
 block content
-    div.panel
-        - var classes = ['panel-heading']
-        div(class=classes)
-            - var title_class = ["panel-title"]
-            h6(class = title_class) 
-                 | #{locale.line("label_cabinet")}
-            //Меню
+    - var classes = ['navbar']
+    div(class=classes)
+        - var title_class = ["navbar-text"]
+        div(class = title_class)
+            h4.panel-title #{locale.line("label_cabinet")}
+        - var classes = ["nav", "navbar-nav", "pull-right"]
+        ul(class=classes)
+            if(account)
+                li.dropdown
+                    a(href="#", class="dropdown-toggle", data-toggle="dropdown")
+                        | #{account.email} &nbsp;
+                        span.caret
+                    ul.dropdown-menu
+                        li
+                            a(href="/logout")
+                                | #{locale.line('label_logout')}
+    //Меню
 
-        div.row
-            div.col-sm-3
-                include cabinet_menu
-                mixin cabinet_menu_navbar(locale)
-            //Контент страницы
-            div.col-sm-6
-                div.panel.panel-info
-                    include  cabinet
-                    mixin cabinet(locale)
-            div.col-sm-3
+    div.row
+        div.col-sm-3
+            include cabinet_menu
+            +cabinet_menu_navbar(locale)
+        //Контент страницы
+        div.col-sm-6
+            div.panel.panel-info
+                include  cabinet
+                +cabinet(locale)
+        div.col-sm-3
     script(src="/js/views/cabinet.js")

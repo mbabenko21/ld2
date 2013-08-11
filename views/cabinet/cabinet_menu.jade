@@ -1,13 +1,13 @@
 mixin cabinet_menu_navbar(locale)
     - var classes = ["row"]
     div(id="cabinet-menu")
-         - var classes = ["nav", "nav-pills", "nav-stacked"]
+        - var classes = ["nav", "nav-pills", "nav-stacked"]
         ul(class=classes)
             - var classes = ["active"]
-             li(class=classes)
-                 a(href="#cabinet", id="button-cabinet", data-toggle="tab") #{locale.line("button_cabinet")}
-             li
-                 a(href="#settings", id="button-settings", data-toggle="tab") #{locale.line("button_settings")}
-             li 
-                 a(href="#char_create", id="button-create-char", data-toggle="tab") #{locale.line("button_create_char")}
+                li(class=classes)
+                    a(href="#cabinet", data-toggle="tab") #{locale.line("button_cabinet")}
+                li
+                    a(href="#settings", data-toggle="tab") #{locale.line("button_settings")}
+//li
+                a(href="#char_create", data-toggle="tab") #{locale.line("button_create_char")}
     

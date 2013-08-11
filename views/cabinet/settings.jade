@@ -1,16 +1,10 @@
-//
-   Created with JetBrains PhpStorm.
-   User: maksim
-   Date: 11.08.13
-   Time: 12:18
-   To change this template use File | Settings | File Templates.
 mixin settings(locale)
     script(src="/js/jquery.textchange.min.js")
     - var classes = ["row", "tab-pane"]
     div(class=classes, id="settings")
-        mixin base_params_form(locale)
-        mixin change_email(locale)
-        mixin change_password(locale)
+        +base_params_form(locale)
+        +change_email(locale)
+        +change_password(locale)
 
 mixin base_params_form(locale)
     - var panelClasses = ["panel", "panel-info"]

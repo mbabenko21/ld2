@@ -10,7 +10,10 @@ mixin cabinet(locale)
         div(class=classes)
             div#widget-errors
             include settings
-            mixin settings(locale)
+            include cabinet_page
+            +cabinet_page(locale)
+            +settings(locale)
+
 
 
 
