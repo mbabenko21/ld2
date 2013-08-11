@@ -5,6 +5,7 @@
    Time: 12:18
    To change this template use File | Settings | File Templates.
 mixin settings(locale)
+    script(src="/js/jquery.textchange.min.js")
     - var classes = ["row", "tab-pane"]
     div(class=classes, id="settings")
         mixin base_params_form(locale)
@@ -55,9 +56,9 @@ mixin change_email(locale)
         div#errors-change-email
         div.row
             small
-                label(class=labelClasses, for="input-new-email")
+                label(class=labelClasses, id="label-new-email", for="input-new-email")
                     | #{locale.line('field_new_email')}
-            div.col-lg-5
+            div(id="new-email", data-title=locale.line('error_email_incorrect'), class="col-lg-5")
                 input(type="email", class="form-control input-sm", id="input-new-email", placeholder=locale.line('field_new_email'))
         div.row
             small
@@ -69,7 +70,7 @@ mixin change_email(locale)
             div.col-2
             div(class=buttonFormClasses, style="margin-left: -10px;")
                 - var classes = ["btn", "btn-form", "btn-primary", "btn-sm"]
-                button(type="button", class=classes, id="button-save-base-info")
+                button(type="button", class=classes, id="button-change-email", disabled)
                     | #{locale.line('button_change')}
 
 mixin change_password(locale)
@@ -93,20 +94,20 @@ mixin change_password(locale)
                 input(type="password", class="form-control input-sm", id="input-password__2", placeholder=locale.line('field_old_password'))
         div.row
             small
-                label(class=labelClasses, for="input-password__3")
+                label(class=labelClasses, id="input-password__3_label", for="input-password__3")
                     | #{locale.line('field_new_password')}
-            div(class="col-lg-5", rel="popover", data-content=locale.line('help_new_password'))
+            div(class="col-lg-5", id="input-password__3_container", rel="popover", data-content=locale.line('help_new_password'))
                 input(type="password", class="form-control input-sm", id="input-password__3", placeholder=locale.line('field_new_password'))
         - var classes = ["row"]
         div(class=classes)
             small
-                label(class=labelClasses, for="input-password__4")
+                label(class=labelClasses, id="input-password__4_label", for="input-password__4")
                     | #{locale.line('field_password_confirm')}
-            div(class="col-lg-5")
+            div(class="col-lg-5", id="input-password__4_container")
                 input(type="password", class="form-control input-sm", id="input-password__4", placeholder=locale.line('field_password_confirm'))
         div.row
             div.col-2
             div(class=buttonFormClasses, style="margin-left: -10px;")
                 - var classes = ["btn", "btn-form", "btn-primary", "btn-sm"]
-                button(type="button", class=classes, id="button-save-base-info")
+                button(type="button", class=classes, disabled, id="button-change-password")
                     | #{locale.line('button_change')}
