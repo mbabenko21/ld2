@@ -20,6 +20,7 @@ mixin base_params_form(locale)
             span.col-lg-12.text-muted
                 | #{locale.line('label_base_settings')}
         hr
+        div#errors-base-parameters
         div.row
             small
                 label(class=labelClasses, for="input-first-name text-sm")
@@ -51,6 +52,7 @@ mixin change_email(locale)
             span.col-lg-12.text-muted
                 | #{locale.line('label_change_email')}
         hr
+        div#errors-change-email
         div.row
             small
                 label(class=labelClasses, for="input-new-email")
@@ -82,6 +84,7 @@ mixin change_password(locale)
             span.col-lg-21.text-muted
                 | #{locale.line('label_change_password')}
         hr
+        div#errors-change-password
         div.row
             small
                 label(class=labelClasses, for="input-password__2")
@@ -92,13 +95,14 @@ mixin change_password(locale)
             small
                 label(class=labelClasses, for="input-password__3")
                     | #{locale.line('field_new_password')}
-            div.col-lg-5
+            div(class="col-lg-5", rel="popover", data-content=locale.line('help_new_password'))
                 input(type="password", class="form-control input-sm", id="input-password__3", placeholder=locale.line('field_new_password'))
-        div.row
+        - var classes = ["row"]
+        div(class=classes)
             small
                 label(class=labelClasses, for="input-password__4")
                     | #{locale.line('field_password_confirm')}
-            div.col-lg-5
+            div(class="col-lg-5")
                 input(type="password", class="form-control input-sm", id="input-password__4", placeholder=locale.line('field_password_confirm'))
         div.row
             div.col-2
