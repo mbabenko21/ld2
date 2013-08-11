@@ -20,7 +20,7 @@ mixin auth_form_navbar(locale)
                             mixin auth_form(locale)
                             //регистрация
                             mixin reg_form(locale)
-    script(src="/js/views/login.js");
+    script(src="/js/views/login.js")
                         
 mixin auth_form(locale)
     - var classes = ["row", "tab-pane", "active"]
@@ -29,7 +29,7 @@ mixin auth_form(locale)
         div.input-group
             - var classes = ["input-group-addon", "glyphicon", "glyphicon-user"]
             span(class=classes)
-            input(type="text", class="form-control auth_login", name="auth[email]", id="inputSuccess", placeholder=locale.line('field_account'))
+            input(type="email", class="form-control auth_login", name="auth[email]", id="inputSuccess", placeholder=locale.line('field_account'))
         div.input-group
             - var classes = ["input-group-addon", "glyphicon", "glyphicon-th"]
             span(class=classes)
@@ -47,7 +47,7 @@ mixin reg_form(locale)
         div.input-group
             - var classes = ["input-group-addon", "glyphicon", "glyphicon-user"]
             span(class=classes)
-            input(type="text", class="form-control auth_login", id="reg-email", placeholder=locale.line('field_account'))
+            input(type="email", class="form-control auth_login", id="reg-email", placeholder=locale.line('field_account'))
         div.input-group
             - var classes = ["input-group-addon", "glyphicon", "glyphicon-th"]
             span(class=classes)

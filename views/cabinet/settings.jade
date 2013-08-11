@@ -1,0 +1,108 @@
+//
+   Created with JetBrains PhpStorm.
+   User: maksim
+   Date: 11.08.13
+   Time: 12:18
+   To change this template use File | Settings | File Templates.
+mixin settings(locale)
+    - var classes = ["row", "tab-pane"]
+    div(class=classes, id="settings")
+        mixin base_params_form(locale)
+        mixin change_email(locale)
+        mixin change_password(locale)
+
+mixin base_params_form(locale)
+    - var panelClasses = ["panel", "panel-info"]
+    - var buttonFormClasses = ["col-lg-3", "col-lg-offset-3"]
+    - var labelClasses = ["control-label", "col-lg-2", "text-right", "text-muted"]
+    div(id="base-parameters")
+        div.row
+            span.col-lg-12.text-muted
+                | #{locale.line('label_base_settings')}
+        hr
+        div.row
+            small
+                label(class=labelClasses, for="input-first-name text-sm")
+                    | #{locale.line('field_first_name')}
+            div.col-lg-5
+                input(type="text", class="form-control input-sm", id="input-first-name", placeholder=locale.line('field_first_name'))
+        div.row
+            small
+                label(class=labelClasses, for="input-last-name")
+                    | #{locale.line('field_last_name')}
+            div.col-lg-5
+                input(type="text", class="form-control input-sm", id="input-last-name", placeholder=locale.line('field_last_name'))
+        div.row
+            div.col-2
+            div(class=buttonFormClasses, style="margin-left: -10px;")
+                - var classes = ["btn", "btn-form", "btn-primary", "btn-sm"]
+                button(type="button", class=classes, id="button-save-base-info")
+                    | #{locale.line('button_save')}
+
+mixin change_email(locale)
+    - var panelClasses = ["panel", "panel-danger"]
+    - var buttonFormClasses = ["col-lg-3", "col-lg-offset-3"]
+    - var labelClasses = ["control-label", "col-lg-2", "text-right", "text-muted"]
+    div(id="change-email")
+        div.row
+        div.row
+        div.row
+        div.row
+            span.col-lg-12.text-muted
+                | #{locale.line('label_change_email')}
+        hr
+        div.row
+            small
+                label(class=labelClasses, for="input-new-email")
+                    | #{locale.line('field_new_email')}
+            div.col-lg-5
+                input(type="email", class="form-control input-sm", id="input-new-email", placeholder=locale.line('field_new_email'))
+        div.row
+            small
+                label(class=labelClasses, for="input-password__1")
+                    | #{locale.line('field_password')}
+            div.col-lg-5
+                input(type="password", class="form-control input-sm", id="input-password__1", placeholder=locale.line('field_password'))
+        div.row
+            div.col-2
+            div(class=buttonFormClasses, style="margin-left: -10px;")
+                - var classes = ["btn", "btn-form", "btn-primary", "btn-sm"]
+                button(type="button", class=classes, id="button-save-base-info")
+                    | #{locale.line('button_change')}
+
+mixin change_password(locale)
+    - var panelClasses = ["panel", "panel-danger"]
+    - var buttonFormClasses = ["col-lg-3", "col-lg-offset-3"]
+    - var labelClasses = ["control-label", "col-lg-2", "text-right", "text-muted"]
+    div#change-password
+        div.row
+        div.row
+        div.row
+        div.row
+            span.col-lg-21.text-muted
+                | #{locale.line('label_change_password')}
+        hr
+        div.row
+            small
+                label(class=labelClasses, for="input-password__2")
+                    | #{locale.line('field_old_password')}
+            div.col-lg-5
+                input(type="password", class="form-control input-sm", id="input-password__2", placeholder=locale.line('field_old_password'))
+        div.row
+            small
+                label(class=labelClasses, for="input-password__3")
+                    | #{locale.line('field_new_password')}
+            div.col-lg-5
+                input(type="password", class="form-control input-sm", id="input-password__3", placeholder=locale.line('field_new_password'))
+        div.row
+            small
+                label(class=labelClasses, for="input-password__4")
+                    | #{locale.line('field_password_confirm')}
+            div.col-lg-5
+                input(type="password", class="form-control input-sm", id="input-password__4", placeholder=locale.line('field_password_confirm'))
+        div.row
+            div.col-2
+            div(class=buttonFormClasses, style="margin-left: -10px;")
+                - var classes = ["btn", "btn-form", "btn-primary", "btn-sm"]
+                button(type="button", class=classes, id="button-save-base-info")
+                    | #{locale.line('button_change')}

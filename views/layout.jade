@@ -1,9 +1,12 @@
 doctype 5
 html
   head
-    title= title
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title= locale.line('application_name')
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/css/bootstrap.min.css')
+    //link(rel='stylesheet', href='/css/bootstrap.min.space.css')
     link(rel='stylesheet', href='/css/bootstrap-glyphicons.css')
     link(rel='stylesheet', href='/css/docs.css')
     link(rel='stylesheet', href='/css/style.css')
@@ -12,5 +15,7 @@ html
     script(src="/js/underscore-min.js")
     script(src="/js/backbone-min.js")
     script(src="/socket.io/socket.io.js")
+    //if lt IE 8
+        script(src="/js/respond.min.js")
   body
     block content

@@ -1,23 +1,34 @@
 application_name: "Likedimion. Возрождение"
+
 button_login: "Вход"
 button_auth: "Авторизация"
 button_registration: "Регистрация"
 button_cabinet: "Кабинет"
 button_settings: "Настройки"
-
+button_save: "Сохранить"
+button_change: "Изменить"
+#
 field_email: "Электронная почта"
 field_password: "Пароль"
 field_password_confirm: "Повторите пароль"
 field_account: "Пользователь"
 field_auth: "Авторизация"
-
+field_first_name: "Имя"
+field_last_name: "Фамилия"
+field_new_email: "Новый Email"
+field_old_password: "Старый пароль"
+field_new_password: "Новый пароль"
+#
 label_startpage: "Добро пожаловать"
 label_auth: "Авторизация"
 label_registration: "Регистрация"
 label_reg_success: "Регистрация завершена"
 label_remember_me: "Оставаться в системе"
 label_cabinet: "Личный кабинет"
-
+label_base_settings: "Основная информация"
+label_change_email: "Смена электронной почты"
+label_change_password: "Сена пароля"
+#
 error_email_exists: "На данный E-Mail адресс уже зарегистрирован аккаунт"
 error_password_not_confirm: "Введенные вами пароли не совпадают"
 error_email_incorrect: "Вы неверно ввели E-Mail проверьте правильность ввода данных"

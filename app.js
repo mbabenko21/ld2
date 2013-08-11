@@ -74,7 +74,6 @@ Router.init(app);
 
 var server = http.createServer(app).listen(app.get('port'), function() {
 	console.log('\x1b[33mServer listening on port \x1b[1m' + app.get('port') + ' in ' + app.get('env') + ' mode\x1b[0m');
-	console.log('\x1b[1m---\x1b[0m\n\x1b[33mExpress\x1b[0m \x1b[1m%s\x1b[0m\n\x1b[33mJade\x1b[0m \x1b[1m%s\x1b[0m\n\x1b[33mMongoose\x1b[0m \x1b[1m%s\x1b[0m', express.version, jade.version, mongoose.version);
 });
 
 var io = require('socket.io').listen(server);

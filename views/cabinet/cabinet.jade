@@ -1,0 +1,17 @@
+//
+   Created with JetBrains PhpStorm.
+   User: maksim
+   Date: 11.08.13
+   Time: 12:56
+   To change this template use File | Settings | File Templates.
+mixin cabinet(locale)
+    div(id="cabinet-widget")
+        - var classes = ["tab-content"]
+        div(class=classes)
+            div#widget-errors
+            include settings
+            mixin settings(locale)
+
+
+
+
