@@ -10,8 +10,11 @@ block content
         ul(class=classes)
             if(account)
                 li.dropdown
-                    a(href="#", class="dropdown-toggle", data-toggle="dropdown")
-                        | #{account.email} &nbsp;
+                    if(account.firstName)
+                        - var name = account.fullName
+                    else
+                        - var name = account.getEmail()
+                    a(href="#", id="account-name", class="dropdown-toggle", data-toggle="dropdown") #{name} &nbsp;
                         span.caret
                     ul.dropdown-menu
                         li

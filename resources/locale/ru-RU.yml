@@ -18,6 +18,7 @@ field_last_name: "Фамилия"
 field_new_email: "Новый Email"
 field_old_password: "Старый пароль"
 field_new_password: "Новый пароль"
+field_current_email: "Ваш Email"
 #
 label_startpage: "Добро пожаловать"
 label_auth: "Авторизация"
@@ -32,11 +33,18 @@ label_logout: "Выход"
 #
 error_email_exists: "На данный E-Mail адресс уже зарегистрирован аккаунт"
 error_password_not_confirm: "Введенные вами пароли не совпадают"
+error_password_invalid: "Неправильный пароль"
 error_email_incorrect: "Вы неверно ввели E-Mail проверьте правильность ввода данных"
 error_page_not_found: "Запрашиваемая Вами страница не существует"
 error_password_not_blank: "Вы забыли ввести пароль"
 error_auth_failed: "Непавильный логин или пароль"
 error_page_not_found_desc: "Вы обратились по несуществующему адрессу. Проверьте адресс, или обратитесь к адинистратору сайта"
+error_name_not_be_empty: "Поле \"Имя\" и \"Фамилия\" не должны быть пустыми"
+error_auth: "Ошибка авторизации"
+
 
 help_first_name: "Введите ваше имя, например, Максим"
 help_new_password: "Проверьте <b>Caps Lock</b> и язык ввода<br>'Password' и 'pAsSword' - разные пароли"
+
+info_fullname_updated: "Ваше имя обновлено"
+info_password_has_been_changed: "Пароль был успешно изменен. При новом входе используйте новый пароль"
